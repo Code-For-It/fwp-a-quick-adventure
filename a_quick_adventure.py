@@ -39,6 +39,10 @@ from time import sleep
 # ***************************************************** #
 left_margin = '  '
 user_response = ''
+gold_value = 0
+have_life_potion = False
+have_sword = False
+is_dead = False
 
 
 
@@ -81,8 +85,9 @@ input(left_margin + 'Press the Enter key to continue.') # pause app for the user
 # ***************************************************** #
 print()
 print(left_margin + 'You are standing in front of a large, old metal door, maybe 8 feet high.') 
-print(left_margin + 'You are standing in front of a large, old metal door, maybe 8 feet high.') 
-user_response = input(left_margin + f'Well {player_name}, do you open the door and enter or leave [enter/leave].') 
+print(left_margin + 'There are strange symbols on the door with a haunting image a scull near the latch.') 
+print(left_margin + 'The latch is rusty and corroded as if not used in decades.') 
+user_response = input(left_margin + f'Well {player_name}, do you open the door and enter or just leave [enter/leave].') 
 sleep(1)
 
 #
@@ -93,18 +98,30 @@ if user_response == 'enter':
 
     # ***************************************************** #
     #                                                       #
-    #     Code Block 5                                      #
-    #     Start the Game                                    #
+    #                   Room 1                              #
     #                                                       #
     # ***************************************************** #
     print()
+    print(left_margin + 'The latch requires a great deal of force to open, but eventually slides and the door opens.') 
+    print(left_margin + 'As you walk through the door, you notice a torch in the corner of what seems to be a large room.') 
+    print(left_margin + 'As you walk torward the torch you can see that it is held by a small troll and he speaks.') 
+    print(left_margin + '\"My name is Gorup and I am keeper of this world. You are welcome, but beware. Not all of our') 
+    print(left_margin + 'dwellers me you well. Jorka instructed me to give you five gold pieces if you choose to continue.\"') 
+    user_response = input(left_margin + 'Do you continue or leave [continue/leave].') 
+    sleep(1)
+
+    if user_response == 'continue':
+        print()
+
+    else:
+        print(left_margin + 'You turn and walk back through the door.') 
 
 else:
 
     # ***************************************************** #
     #                                                       #
     #     Code Block 6                                      #
-    #     Thank the User and Exit the App                   #
+    #     Process the End of the Game                       #
     #                                                       #
     # ***************************************************** #
     print()
