@@ -59,14 +59,19 @@ print()
 input(left_margin + 'Press the Enter key to continue.') # pause app for the user
 
 print()
-user_name = input(left_margin + 'What is your name?') # 
+player_name = input(left_margin + 'What is your name?') # 
 sleep(1)
 
 #
 # Note: f-String formatting will be the primary method of formatting strings.
 #
-print(left_margin + f'Well {user_name}, it is nice to meet you.')
+print(left_margin + f'Well {player_name}, it is nice to meet you. I am Jorka the Dungeon Master.')
+print(left_margin + 'As you move through the dungeon I will describe where you are and give you')
+print(left_margin + 'choices for your next action. The choice will be in the square brackets.')
+print(left_margin + 'Be sure to type your choice exactly how it appears in the brackets.')
 sleep(1)
+print()
+input(left_margin + 'Press the Enter key to continue.') # pause app for the user
 
 # ***************************************************** #
 #                                                       #
@@ -75,19 +80,21 @@ sleep(1)
 #                                                       #
 # ***************************************************** #
 print()
-user_response = input(left_margin + 'Are you ready to start?') 
+print(left_margin + 'You are standing in front of a large, old metal door, maybe 8 feet high.') 
+print(left_margin + 'You are standing in front of a large, old metal door, maybe 8 feet high.') 
+user_response = input(left_margin + f'Well {player_name}, do you open the door and enter or leave [enter/leave].') 
 sleep(1)
 
 #
 # Use an if/else block to give the user an opportunity to exit the app.
 #
 
-if user_response == 'yes':
+if user_response == 'enter':
 
     # ***************************************************** #
     #                                                       #
     #     Code Block 5                                      #
-    #     Get Words from User                               #
+    #     Start the Game                                    #
     #                                                       #
     # ***************************************************** #
     print()
@@ -96,7 +103,7 @@ else:
 
     # ***************************************************** #
     #                                                       #
-    #     Code Block 8                                      #
+    #     Code Block 6                                      #
     #     Thank the User and Exit the App                   #
     #                                                       #
     # ***************************************************** #
