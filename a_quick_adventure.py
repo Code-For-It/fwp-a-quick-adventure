@@ -7,7 +7,7 @@
 """
 
     Author: John Velis
-    Created: 1/21/2022
+    Created: 1/20/2022
     Modified: 
     Title: A Quick Adventure
     Notes:
@@ -51,8 +51,9 @@ user_response = ''
 print(left_margin + 'Hello, my name is Bonzo.')
 sleep(1)
 print()
-print(left_margin + 'This is a fun little application that will gather some words from you')
-print(left_margin + 'and then build out a Mad Lib using them.')
+print(left_margin + 'This application will take you on an adventure.')
+print(left_margin + 'You will explore a dungeon, gather treasure and try to not')
+print(left_margin + 'get killed by the many dangers you will encounter.')
 sleep(1)
 print()
 input(left_margin + 'Press the Enter key to continue.') # pause app for the user
