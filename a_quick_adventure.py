@@ -16,9 +16,10 @@
      2) Variables are declared and initialized in a single location for clarity. A
         common variable (user_response) will be used for all user action choices.
      3) The code uses significant commenting to help locate and explain coding examples.
-     3) All user responses are assumed to be in the correct format and no user input
+     4) All user responses are assumed to be in the correct format and no user input
         validation is performed.
-     4) A left margin is applied to all output using a constant (left_margin) to for readability.
+     5) If a user enters an invalid response, the "else" code block will be executed.
+     6) A left margin is applied to all output using a constant (left_margin) to for readability.
     
 """
 
@@ -96,11 +97,18 @@ sleep(1)
 
 if user_response == 'enter':
 
-    # ***************************************************** #
-    #                                                       #
-    #                   Room 1                              #
-    #                                                       #
-    # ***************************************************** #
+    #
+    # Note: Multiline string used for commenting code
+    #
+    """
+    Location: Entry Room
+    NPC: Gorup the Troll
+    Treasure: 5 Gold Pieces                        
+    Weapons: None
+    Potions: None
+
+    """
+
     print()
     print(left_margin + 'The latch requires a great deal of force to open, but eventually slides and the door opens.') 
     print(left_margin + 'As you walk through the door, you notice a torch in the corner of what seems to be a large room.') 
@@ -112,9 +120,36 @@ if user_response == 'enter':
 
     if user_response == 'continue':
         print()
+        print(left_margin + 'You pocket the five gold pieces. Gorup points toward two doors behind him.') 
+        print(left_margin + 'One is ornate, guilded with silver and gold.') 
+        print(left_margin + 'The other is made up of splintered wood, roughly nailed together.')
+        user_response = input(left_margin + 'Do you choose the ornate or wood door [ornate/wood]') 
+        sleep(1)
 
+        if user_response == 'ornate':
+            """
+            Location: Mirrored Room
+            NPC: None
+            Treasure: None                        
+            Weapons: None
+            Potions: None
+
+            """
+            print()
+
+        else:
+            """
+            Location: Armory
+            NPC: Talmay the Dwarf
+            Treasure: 10 Gold Pieces                        
+            Weapons: Slayer the Battle Sword 
+            Potions: None
+
+            """
+            print()
     else:
         print(left_margin + 'You turn and walk back through the door.') 
+        sleep(2)
 
 else:
 
@@ -125,9 +160,31 @@ else:
     #                                                       #
     # ***************************************************** #
     print()
-    print(left_margin + 'That\'s too bad, because I really like to make stories with people.')
-    print(left_margin + 'Thanks you for trying my application and have a nice day.')
-    sleep(1)
+    if is_dead:
+        print()
+        print(left_margin + f'Well {player_name}, it appears you did not survive my dungeon.')
+        if gold_value > 0:
+            print(left_margin + f'I will take back your {gold_value} gold pieces.') 
+            sleep(1)
+        if have_sword:
+            print(left_margin + 'I will take back your sword as you will not be needing it anymore.') 
+            sleep(1)
+        print(left_margin + f'You are free to go {player_name}, but come back again when you are better prepared.') 
+        sleep(1)
+
+    else:
+        print()
+        print(left_margin + f'Well {player_name}, it appears you did survived my dungeon.')
+        if gold_value > 0:
+            print(left_margin + f'Not a bad take coming home with {gold_value} gold pieces, eh?') 
+            sleep(1)
+        if have_life_potion:
+            print(left_margin + 'You may keep the Life Potion if you like.') 
+            sleep(1)
+        print(left_margin + f'You are free to go {player_name}, and come back when you want to play again.') 
+        sleep(1)
+        sleep(1)
+
     print()
     input(left_margin + 'Press the Enter key to exit.') # pause app so the user can read the final comments
 
