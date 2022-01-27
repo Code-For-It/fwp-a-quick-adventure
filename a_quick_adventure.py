@@ -28,7 +28,6 @@
 #     Import Python Modules                             #
 #                                                       #
 # ***************************************************** #
-from operator import le, truediv
 from time import sleep
 
 # ***************************************************** #
@@ -49,16 +48,12 @@ have_book = False
 did_enter = False
 is_dead = False
 
-
-
 # ***************************************************** #
 #                                                       #
 #     Code Block 3                                      #
-#     Introduce Yourself and the Application            #
+#     Play the game                                     #
 #                                                       #
 # ***************************************************** #
-print(left_margin + 'Hello, my name is Bonzo.')
-sleep(1)
 print()
 print(left_margin + 'This application will take you on an adventure.')
 print(left_margin + 'You will explore a dungeon, gather treasure and try to not')
@@ -85,9 +80,17 @@ print()
 input(left_margin + 'Press the Enter key to continue.') # Pause app for the user.
 
 print()
+print(left_margin + left_margin + '********************************************')
+print(left_margin + left_margin + '*                                          *')
+print(left_margin + left_margin + '*         Outside the Dungeon              *')
+print(left_margin + left_margin + '*                                          *')
+print(left_margin + left_margin + '********************************************')
+print()
+sleep(2)
 print(left_margin + 'You are standing in front of a large, old metal door, maybe 8 feet high.') 
 print(left_margin + 'There are strange symbols on the door with a haunting image of a scull near the latch.') 
 print(left_margin + 'The latch is rusty and corroded as if not used in decades.') 
+print()
 user_response = input(left_margin + f'Well {player_name}, do you open the door and enter or just leave [enter/leave].') 
 sleep(1)
 
@@ -102,7 +105,7 @@ if user_response == 'enter':
     # Note: Multiline string used for commenting code
     #
     """
-    Location: Entry Room
+    Location: The Gallery
     NPC: Gorup the Troll
     Treasure: 5 Gold Pieces                        
     Weapons: None
@@ -112,11 +115,18 @@ if user_response == 'enter':
 
     print()
     print()
+    print(left_margin + left_margin + '********************************************')
+    print(left_margin + left_margin + '*                                          *')
+    print(left_margin + left_margin + '*         The Gallery                      *')
+    print(left_margin + left_margin + '*                                          *')
+    print(left_margin + left_margin + '********************************************')
+    print()
+    sleep(2)
     print(left_margin + 'The latch requires a great deal of force to open, but eventually slides and the door opens.') 
     print(left_margin + 'As you walk through the door, you notice a torch in the corner of what seems to be a large room.') 
     print(left_margin + 'As you walk torward the torch you can see that it is held by a small troll and he speaks.') 
     print(left_margin + '\"My name is Gorup and I am keeper of this world. You are welcome, but beware. Not all of our') 
-    print(left_margin + 'dwellers me you well. Jorka instructed me to give you five gold pieces if you choose to leave.\"') 
+    print(left_margin + 'dwellers mean you well. Jorka instructed me to give you five gold pieces if you choose to leave.\"') 
     print()
     user_response = input(left_margin + 'Do you continue or leave [continue/leave].?') 
     sleep(1)
@@ -131,7 +141,7 @@ if user_response == 'enter':
         print(left_margin + 'One is ornate, guilded with silver and gold.') 
         print(left_margin + 'The other is made up of splintered wood, roughly nailed together.')
         print()
-        user_response = input(left_margin + 'Do you choose the ornate or wood door [ornate/wood]?') 
+        user_response = input(left_margin + 'Do you choose the ornate or wood door [ornate/wooden]?') 
         sleep(1)
 
         #
@@ -146,6 +156,13 @@ if user_response == 'enter':
             Potions: None
 
             """
+            print()
+            print()
+            print(left_margin + left_margin + '********************************************')
+            print(left_margin + left_margin + '*                                          *')
+            print(left_margin + left_margin + '*         The Mirrored Room                *')
+            print(left_margin + left_margin + '*                                          *')
+            print(left_margin + left_margin + '********************************************')
             print()
             print(left_margin + 'Walking through the door you notice the room is brightly lit by a huge') 
             print(left_margin + 'chandelier and the walls are completely covered by mirrors. In the center') 
@@ -170,6 +187,11 @@ if user_response == 'enter':
                 gold_value = gold_value + 50
             
             elif user_response == 'portal':
+                #
+                # Player looses 20 points of health
+                #
+                health = health - 20 
+
                 print()
                 print(left_margin + 'Climbing through the tight opening for the portal you feel a tingling on your')
                 print(left_margin + 'skin and begin to feel a bit sick.')  
@@ -188,7 +210,7 @@ if user_response == 'enter':
         #
         # player chooses the Wooden Door
         #
-        elif user_response == 'wood':
+        elif user_response == 'wooded':
             """
             Location: Armory
             NPC: Talmay the Dwarf
@@ -197,6 +219,13 @@ if user_response == 'enter':
             Potions: None
 
             """
+            print()
+            print()
+            print(left_margin + left_margin + '********************************************')
+            print(left_margin + left_margin + '*                                          *')
+            print(left_margin + left_margin + '*         The Armory                       *')
+            print(left_margin + left_margin + '*                                          *')
+            print(left_margin + left_margin + '********************************************')
             print()
             print(left_margin + 'The wooden door creaks as you push on it to open. Inside is a small room')
             print(left_margin + 'with a low ceiling. Lit by torch pot along the middle walkway the walls')  
@@ -245,11 +274,18 @@ if user_response == 'enter':
 
         """   
         print()
+        print()
+        print(left_margin + left_margin + '********************************************')
+        print(left_margin + left_margin + '*                                          *')
+        print(left_margin + left_margin + '*         Dining Hall                      *')
+        print(left_margin + left_margin + '*                                          *')
+        print(left_margin + left_margin + '********************************************')
+        print()
         print(left_margin + 'You now find yourself in a large hall, well lit by candles and warmed by a huge')
         print(left_margin + 'fireplace at one end. A long table lined with chairs sets in the middle of the')  
         print(left_margin + 'room. All chairs are empty save one where a old, gnarly minotaur sits, head down.') 
         print(left_margin + 'Walking closer, you watch as the minotaur stands and unsheathes a sword.')
-        print(left_margin + 'It looks at you and asks what you have brought')
+        print(left_margin + 'It looks at you and asks what you have brought.')
 
         if have_sword:
             print()
@@ -271,26 +307,17 @@ if user_response == 'enter':
                 print(left_margin + 'The minotaur leaps at you and with one swift blow sends you flying to the ground.')
                 print(left_margin + '\"You must leave now!\" shouts the minotaur and raise her sword again.')
                 print(left_margin + f'You loose 20 points of health and are now at {health} points.')
-                sleep(2)
+                sleep(1)
 
             #
             # Player did not attacks the minotaur
             #
             elif user_response == 'no': 
-                print(left_margin + 'You remember the gold you carry and wonder if it would please the minotaur.')
                 print()
-                user_response = input(left_margin + 'Do you offer the minotaur 10 gold pieces [yes/no]?') 
+                print(left_margin + 'You remove your hand from your sword and the minotaur smiles.')
+                print(left_margin + '\"Wise choice Little One. I am sure I would have bested you on this day.\" ')
+                print()
                 sleep(1)
-
-                if user_response == 'yes':
-                    print(left_margin + 'The minotaur is pleased and offers you a vile containing a purple, sticky liquid.')
-                    print(left_margin + '\"Keep that close at hand. The potion will heal most anything. You will find it useful')  
-                    print(left_margin + 'in your journey I am quite sure.\"')                 
-
-                    #
-                    # Add potion to player's inventory.
-                    #
-                    have_life_potion = True
 
             #
             # Player did not enter a valid response about drawing their sword.
@@ -300,14 +327,63 @@ if user_response == 'enter':
                 print(left_margin + 'I am afraid I do not understand your response.') 
                 sleep(2)
 
+        print()
+        print(left_margin + 'You remember the gold you carry and wonder if it would please the minotaur.')
+        print()
+        user_response = input(left_margin + 'Do you offer the minotaur 10 gold pieces [yes/no]?') 
+        sleep(1)
+
+        #
+        # Player offers gold to minotaur.
+        #
+        if user_response == 'yes':
+            #
+            # Subtract from player's treasure
+            #
+            gold_value = gold_value - 10
+
+            #
+            # Add potion to player's inventory.
+            #
+            have_life_potion = True 
+
+            print(left_margin + 'The minotaur is pleased and offers you a vile containing a purple, sticky liquid.')
+            print(left_margin + '\"Keep that close at hand. The potion will heal most anything. You will find it useful')  
+            print(left_margin + 'in your journey I am quite sure.\"')
+
+        #
+        # Player did not pay the minotaur
+        #
+        elif user_response == 'no': 
+            print()
+            print(left_margin + 'You say nothing and the minotaur, looking very displeased waves you on your way.')
+            print()
+            sleep(1)
+
+        #
+        # Player did not enter a valid response about paying the minotaur.
+        #
+        else:
+            print()
+            print(left_margin + 'I am afraid I do not understand your response.') 
+            sleep(2)                 
+
         """
         Location: The Great Study
         NPC: Alitoria the Elf
         Treasure: 25 Gold Pieces                       
         Weapons: None
         Potions: None
+        Item: Book of Wisdom
 
         """   
+        print()
+        print()
+        print(left_margin + left_margin + '********************************************')
+        print(left_margin + left_margin + '*                                          *')
+        print(left_margin + left_margin + '*         The Great Study                  *')
+        print(left_margin + left_margin + '*                                          *')
+        print(left_margin + left_margin + '********************************************')
         print()
         print(left_margin + 'Walking on you enter a room lined by shelves of old books. The walls')
         print(left_margin + 'are covered with paintings of grand humans and elves. Sitting at one of the')  
@@ -362,27 +438,23 @@ if user_response == 'enter':
             sleep(2)
 
         #
-        # The game is complete and the player leaves the dungeon
+        # The game is complete and the player leaves the dungeon (Code Block 4)
         #
-        print()
-        print(left_margin + 'You awaken outside the first door. Jorka stands over you.') 
-        sleep(1)
 
-        print()
-        input(left_margin + 'Press the Enter key to continue.') # pause app
 
     #
     # Player leaves the dungeon.
     #
     elif user_response == 'leave':
+        #
+        # add the gold to the player's treasure
+        #
+        gold_value = gold_value + 5   
+
         print()
         print(left_margin + 'You pocket the five gold pieces and turn to walk out the door.') 
         sleep(2)
 
-        #
-        # add the gold to the player's treasure
-        #
-        gold_value = gold_value + 5 
 
     #
     # Player did not enter a valid response and leaves the dungeon.
@@ -399,15 +471,28 @@ else:
 
 # ***************************************************** #
 #                                                       #
-#     Code Block 6                                      #
+#     Code Block 4                                      #
 #     Process the End of the Game                       #
 #                                                       #
 # ***************************************************** #
+
+print()
 
 #
 # Player entered the dungeon
 #
 if did_enter:
+    print()
+    print(left_margin + left_margin + '********************************************')
+    print(left_margin + left_margin + '*                                          *')
+    print(left_margin + left_margin + '*         Outside the Dungeon              *')
+    print(left_margin + left_margin + '*                                          *')
+    print(left_margin + left_margin + '********************************************')
+    print()
+    print()
+    print(left_margin + 'You awaken outside the first door. Jorka stands over you.') 
+    sleep(1)
+    print()
 
     #
     # Player died.
