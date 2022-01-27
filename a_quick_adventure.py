@@ -8,7 +8,7 @@
 
     Author: John Velis
     Created: 1/19/2022
-    Modified: 
+    Modified: 1/26/2022
     Title: A Quick Adventure
     Notes:
      1) This application is designed to demonstrate the use of conditionals to 
@@ -33,14 +33,16 @@ from time import sleep
 # ***************************************************** #
 #                                                       #
 #     Code Block 2                                      #
+#     Setup the Game                                    #
 #     Declare and Initialize Variables and Constants    #
-#     Note: Variables can also be declared when they    #
-#           first assigned a value.                     #
 #                                                       #
 # ***************************************************** #
 left_margin = '  '
 user_response = ''
-gold_value = 0
+#
+# Setup initial game values.
+#
+gold_value = 20
 health = 100
 have_life_potion = False
 have_sword = False
@@ -51,7 +53,7 @@ is_dead = False
 # ***************************************************** #
 #                                                       #
 #     Code Block 3                                      #
-#     Play the game                                     #
+#     Introduce and Play the game                       #
 #                                                       #
 # ***************************************************** #
 print()
@@ -59,8 +61,10 @@ print(left_margin + 'This application will take you on an adventure.')
 print(left_margin + 'You will explore a dungeon, gather treasure and try to not')
 print(left_margin + 'get killed by the many dangers you will encounter.')
 sleep(1)
+
 print()
 input(left_margin + 'Press the Enter key to continue.') # Pause app for the user.
+sleep(1)
 
 print()
 player_name = input(left_margin + 'What is your name?') # 
@@ -76,8 +80,10 @@ print(left_margin + 'As you move through the dungeon I will describe where you a
 print(left_margin + 'choices for your next action. The choice will be in the square brackets.')
 print(left_margin + 'Be sure to type your choice exactly how it appears in the brackets.')
 sleep(1)
+
 print()
 input(left_margin + 'Press the Enter key to continue.') # Pause app for the user.
+sleep(1)
 
 print()
 print(left_margin + left_margin + '********************************************')
@@ -210,7 +216,7 @@ if user_response == 'enter':
         #
         # player chooses the Wooden Door
         #
-        elif user_response == 'wooded':
+        elif user_response == 'wooden':
             """
             Location: Armory
             NPC: Talmay the Dwarf
@@ -243,11 +249,15 @@ if user_response == 'enter':
                 #
                 have_sword = True
 
+                print(left_margin + 'You take the sword and tie it to your belt.')
+
             elif user_response == 'gold':
                 #
                 # add gold to player's treasure
                 #
                 gold_value = gold_value + 10
+
+                print(left_margin + f'You pocket the gold and note that you now have {gold_value} gold pieces.')
 
             #
             # Player did not enter a valid response of what to take.
@@ -264,6 +274,10 @@ if user_response == 'enter':
             print()
             print(left_margin + 'I am afraid I do not understand your response.') 
             sleep(2)  
+
+        print()
+        input(left_margin + 'Press the Enter key to continue.') # Pause app for the user.
+        sleep(1)
 
         """
         Location: Dining Hall
@@ -366,7 +380,11 @@ if user_response == 'enter':
         else:
             print()
             print(left_margin + 'I am afraid I do not understand your response.') 
-            sleep(2)                 
+            sleep(2) 
+
+        print()
+        input(left_margin + 'Press the Enter key to continue.') # Pause app for the user.
+        sleep(1)                
 
         """
         Location: The Great Study
@@ -438,12 +456,12 @@ if user_response == 'enter':
             sleep(2)
 
         #
-        # The game is complete and the player leaves the dungeon (Code Block 4)
+        # The game is complete and the player leaves the dungeon. (Code Block 4)
         #
 
 
     #
-    # Player leaves the dungeon.
+    # Player leaves the dungeon. (Code Block 4)
     #
     elif user_response == 'leave':
         #
@@ -457,17 +475,21 @@ if user_response == 'enter':
 
 
     #
-    # Player did not enter a valid response and leaves the dungeon.
+    # Player did not enter a valid response and leaves the dungeon. (Code Block 4)
     #
     else:
         print()
         print(left_margin + 'I am afraid I do not understand your response.') 
         sleep(2)
 #
-# Player chose to not enter the dungeon
+# Player chose to not enter the dungeon.  (Code Block 4)
 #
 else:
     did_enter = False
+
+print()
+input(left_margin + 'Press the Enter key to continue.') # Pause app for the user.
+sleep(1)
 
 # ***************************************************** #
 #                                                       #
@@ -532,8 +554,12 @@ if did_enter:
             print(left_margin + f'Not a bad take coming home with {gold_value} gold pieces and the elvin book, eh?')
             print() 
             sleep(1)
-        elif gold_value >50:
+        elif gold_value > 50:
             print(left_margin + f'Not a bad take coming home with {gold_value} gold pieces eh?')
+            print() 
+            sleep(1)
+        elif gold_value > 25:
+            print(left_margin + f'You could have done better than coming home with {gold_value} gold pieces eh?')
             print() 
             sleep(1)
         else:
